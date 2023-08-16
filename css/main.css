@@ -64,8 +64,6 @@ p {
   width: 1px;
 }
 
-.phone {}
-
 .phone__box {
   margin: 13px auto;
   border: 1.5mm solid #222222;
@@ -144,7 +142,7 @@ p {
   border-radius: 10px;
   bottom: 0;
   width: 60%;
-  height: 4.5px;
+  height: 5.5px;
   background-color: #fff;
   z-index: 999;
 }
