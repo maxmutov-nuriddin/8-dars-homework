@@ -2,6 +2,8 @@ let phoneBoxSpan = document.querySelector(".phone-box-span");
 let calendarS = document.querySelector('.calendars')
 let calendar = document.querySelector('.calendar')
 let spans = document.querySelector('.phone-box-span')
+let blockData = document.querySelector('.block__display');
+let bigData = document.querySelector('.block-data');
 
 
 let camera = document.querySelector(".camera");
@@ -12,15 +14,19 @@ let batterySpan = document.querySelector('.data-battery')
 
 // time  
 
+
+
 let date = new Date();
 let options = { hour: 'numeric', minute: 'numeric' };
 let times = date.toLocaleString("it-IT", options);
 timeSpan.innerHTML = times;
+bigData.innerHTML = times;
 
 let clear = setInterval(() => {
   date = new Date();
   times = date.toLocaleString("it-IT", options);
   timeSpan.innerHTML = times;
+  bigData.innerHTML = times;
 }, 60000);
 
 
@@ -133,32 +139,61 @@ function openClockBox() {
 }
 // notes
 
-function openNotes() {
-  const userAgent = navigator.userAgent.toLowerCase();
+let bigNotes = document.querySelector('.notes')
+let notesBoxS = document.querySelector('.notes__box')
 
-  if (/ipad|iphone|ipod/.test(userAgent)) {
-    window.location.href = 'mobilenotes:';
-  } else if (/android/.test(userAgent)) {
-    window.location.href = 'notes:';
-  } else if (/win/.test(userAgent)) {
-    try {
-      const shell = new ActiveXObject('WScript.Shell');
-      shell.Run('notepad.exe');
-    } catch (e) {
-      console.log('Не удалось открыть приложение "Заметки" на данном устройстве.');
-    }
-  } else if (/mac/.test(userAgent)) {
-    try {
-      const appPath = '/Applications/Notes.app'; 
-      window.location.href = `file://${appPath}`;
-    } catch (e) {
-      console.log('Не удалось открыть приложение "Заметки" на данном устройстве.');
-    }
-  } else {
-    console.log('Открытие приложения "Заметки" не поддерживается на данном устройстве.');
+bigNotes.addEventListener('click', () => {
+  notesBoxS.classList.add('notes__box-none')
+  timeSpan.style = `color: black;`
+  spans.classList.add('colors-span')
+  formNotes.classList.add('none')
+
+})
+
+let btnBlock = document.querySelector('.notes__block-btn')
+let formNotes = document.querySelector('.form-notes')
+let notesList = document.querySelector('.notes-list')
+let inpetNotesForm = document.querySelector('.inpet__notes-form')
+let areaNotesForm = document.querySelector('.area__notes-form')
+let formClose = document.querySelector('.form__close')
+
+
+btnBlock.addEventListener('click', () => {
+  notesList.classList.add('none')
+  formNotes.classList.remove('none')
+})
+
+formNotes.addEventListener('keypress', (event) => {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+
+    let div = document.createElement('div');
+    div.classList.add('box-notes');
+    div.style = 'margin-top: 10px;'
+
+    let title = document.createElement('h4');
+    title.classList.add('notes-header');
+    title.innerHTML = inpetNotesForm.value;
+
+    let text = document.createElement('p');
+    text.classList.add('notes-text');
+    text.innerHTML = areaNotesForm.value;
+
+    div.prepend(text);
+    div.prepend(title);
+    notesList.append(div);
+
+    inpetNotesForm.value = '';
+    areaNotesForm.value = '';
   }
+});
 
-}
+formClose.addEventListener('click', (e) => {
+  e.preventDefault();
+  notesList.style = 'display: block'
+  formNotes.classList.add('none')
+})
+
 
 // translate
 let translate = document.querySelector('.translate');
@@ -480,14 +515,20 @@ function handleTouchEnd(event) {
   const yDiff = startY - currentY;
 
   if (yDiff > 0) {
+    blockData.classList.add('block__display-none')
+    timeSpan.style = `color: #fff;`
+    batterySpan.style = `color: #fff;`
+
+  }
+  if (yDiff > 0) {
     timeSpan.style = `color: #fff;`
     calendar.classList.remove('block')
     spans.classList.remove('colors-span')
     clock.classList.remove('block__clock');
     clock.classList.remove('block__clock');
+    notesBoxS.classList.remove('notes__box-none')
     translate.classList.remove('translate__block')
     videosContainer.style = `z-index: -11`
-
   }
 
   if (yDiff > 0 && videoElement) {

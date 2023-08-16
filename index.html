@@ -24,7 +24,6 @@ st
           </div>
           <div class="time__battery">
             <span class="data-battery">
-
             </span>
           </div>
         </div>
@@ -40,7 +39,7 @@ st
               <div class="app-name">Camera</div>
             </li>
             <li class="app">
-              <div class="app-icon notes" onchange="openNotes()"></div>
+              <div class="app-icon notes" onchange="notesBox()"></div>
               <div class="app-name">Notes</div>
             </li>
             <li class="app">
@@ -113,6 +112,28 @@ st
             </div>
             <textarea class="text__data" cols="30" rows="10"></textarea>
           </div>
+        </div>
+
+        <div class="notes__box">
+          <div class="notes-list">
+            <div class="box-notes">
+              <h4 class="notes-header">My user in telegram</h4>
+              <p class="notes-text">@mv_nuriddin</p>
+            </div>
+            <button class="notes__block-btn">➕</button>
+          </div>
+          <form class="form-notes">
+            <div>
+              <button class="form__close"><img src="./img/pngegg-back.png" width="10" height="10"></button>
+              <input class="inpet__notes-form" type="text" placeholder="Header"
+                style="padding: 10px 0; margin-bottom: 10px;">
+            </div>
+            <textarea class="area__notes-form" cols="30" rows="10%" placeholder="Start typing"></textarea>
+          </form>
+        </div>
+
+        <div class="block__display">
+          <div class="block-data"></div>
         </div>
 
       </div>

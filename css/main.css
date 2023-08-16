@@ -340,7 +340,7 @@ td {
 }
 
 .time__times {
-  color: #fff;
+  color: transparent;
   font-size: 17px;
   font-weight: bold;
   align-self: center;
@@ -354,7 +354,7 @@ td {
   align-self: center;
   width: 43px;
   height: 43px;
-  color: #fff;
+  color: transparent;
   z-index: 999;
 }
 
@@ -427,7 +427,7 @@ td {
 }
 
 /* translator */
-.translate{
+.translate {
   display: none;
 }
 
@@ -445,15 +445,113 @@ td {
   justify-content: center;
 }
 
-.translate__data{
+.translate__data {
   display: flex;
   gap: 20px;
   flex-direction: column;
 }
 
-.translate__btn, .change__btn{
+.translate__btn,
+.change__btn {
   color: rgb(67, 67, 211);
   border-radius: 10px;
   background-color: transparent;
   border: 1px solid rgb(67, 67, 211);
+}
+
+/* notes */
+.notes__box {
+  position: absolute;
+  text-align: center;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  border-radius: 37px;
+  display: flex;
+  align-items: self-start;
+  text-align: center;
+  justify-content: center;
+  display: none;
+  /* display: block; */
+}
+
+.notes__box-none {
+  display: block;
+}
+
+.form-notes {
+  margin: 50px 0;
+  display: flex;
+  gap: 15px ;
+  flex-direction: column;
+}
+
+.none{
+  display: none;
+}
+
+.notes-list {
+  margin-top: 40px;
+  /* display: none; */
+}
+
+.box-notes {
+  width: 245px;
+  padding: 15px 20px;
+  background-color: #ccc;
+  border-radius: 12px;
+  text-align: left;
+  margin: 0 auto;
+  
+}
+
+.notes-header {
+  margin: 0;
+  font-size: 15px;
+}
+
+.notes-text {
+  margin-top: 5px;
+  font-size: 10px;
+}
+
+.notes__block-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f4ae22;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 9px;
+  margin: 0;
+}
+
+
+/* blcok */
+.block__display {
+  display: block;
+  position: absolute;
+  text-align: center;
+  background-image: url('../img/bg-img.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100%;
+  width: 100%;
+  height: 100%;
+  border-radius: 33px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+
+.block__display-none {
+  display: none;
+}
+
+.block-data {
+  margin-top: 79px;
+  font-weight: bold;
+  font-size: 70px;
+  color: #fff;
 }
