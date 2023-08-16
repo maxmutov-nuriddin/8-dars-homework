@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phone</title>
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+st
+
+<body>
+  <div class="container">
+    <div class="phone__box">
+      <div class="phone__box-inner">
+
+        <div class="phone__box-top">
+          <span class="phone__box-camera"></span>
+          <span class="phone__box-diynamic"></span>
+        </div>
+        <div class="time">
+          <div class="time__times">
+          </div>
+          <div class="time__battery">
+            <span class="data-battery">
+
+            </span>
+          </div>
+        </div>
+
+        <div class="phone__box-programs">
+          <ul class=row>
+            <li class="app">
+              <div class="app-icon setting" onclick="openSettings()"></div>
+              <div class="app-name">Settings</div>
+            </li>
+            <li class="app">
+              <div class="app-icon camera"></div>
+              <div class="app-name">Camera</div>
+            </li>
+            <li class="app">
+              <div class="app-icon notes" onchange="openNotes()"></div>
+              <div class="app-name">Notes</div>
+            </li>
+            <li class="app">
+              <div class="app-icon calendars"></div>
+              <div class="app-name">Calendar</div>
+            </li>
+          </ul>
+          <ul class=row>
+            <li class="app">
+              <div class="app-icon clock" onclick="openClockBox()"></div>
+              <div class="app-name">Clock</div>
+            </li>
+            <li class="app">
+              <div class="app-icon photos"></div>
+              <div class="app-name">Gallery</div>
+            </li>
+            <li class="app">
+              <div class="app-icon icon__gugls" onclick="openGoogleSearch()"></div>
+              <div class="app-name">Safari<div>
+            </li>
+            <li class="app">
+              <div class="app-icon kril" onclick="blockTranslate()"></div>
+              <div class="app-name">Translator</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="phone__box-botton">
+          <ul class=row>
+            <li class="app">
+              <div class="app-icon message" onclick="openPhone()"></div>
+            </li>
+            <li class="app">
+              <div class="app-icon phone" onclick="openMessages()"></div>
+            </li>
+            <li class="app">
+              <div class="app-icon web" onclick="openGoogleSearch()"></div>
+            </li>
+            <li class="app">
+              <div class="app-icon setting" onclick="openSettings()"></div>
+            </li>
+          </ul>
+        </div>
+
+        <span class="phone-box-span"></span>
+
+        <div class="calendar"></div>
+
+        <div id="videos-container"></div>
+
+        <div class="clock__box">
+          <div class="alarm-container">
+            <div class="wrapper">
+              <input type="time" name="" class="alarm-time" />
+              <button type="submit" class="btn-alarm">Set Alarm</button>
+              <div class="optionS">
+                <button class="btn-snooze">Snooze for 5s</button>
+                <button class="btn-stopalarm">Stop Alarm</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="translate">
+          <div class="translate__data">
+            <textarea class="text__input" cols="30" rows="10"></textarea>
+            <div>
+              <button class="translate__btn">Krill ↔ Lotin</button>
+              <button class="change__btn">Lotin ↔ Krill</button>
+            </div>
+            <textarea class="text__data" cols="30" rows="10"></textarea>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>
