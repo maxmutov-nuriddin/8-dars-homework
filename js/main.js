@@ -12,10 +12,38 @@ const videosContainer = document.getElementById('videos-container');
 let timeSpan = document.querySelector('.time__times')
 let batterySpan = document.querySelector('.data-battery')
 
+// game
+
+let randomNumber = Math.floor(Math.random() * 100) + 1;
+
+let guessInput = document.getElementById('guessInput');
+let message = document.getElementById('message');
+let gameBox = document.querySelector('.game__box');
+
+function checkGuess() {
+    let userGuess = parseInt(guessInput.value);
+
+    if (userGuess === randomNumber) {
+        message.textContent = 'Поздравляю! Вы угадали число!';
+        message.style.color = 'green';
+        guessInput.disabled = true;
+    } else if (userGuess < randomNumber) {
+        message.textContent = 'Загаданное число больше.';
+        message.style.color = 'red';
+    } else if (userGuess > randomNumber) {
+        message.textContent = 'Загаданное число меньше.';
+        message.style.color = 'red';
+    }
+}
+
+function games() {
+  gameBox.classList.remove('none')
+  timeSpan.style = `color: black;`
+  spans.classList.add('colors-span')
+}
+
+
 // time  
-
-
-
 let date = new Date();
 let options = { hour: 'numeric', minute: 'numeric' };
 let times = date.toLocaleString("it-IT", options);
@@ -528,6 +556,7 @@ function handleTouchEnd(event) {
     clock.classList.remove('block__clock');
     notesBoxS.classList.remove('notes__box-none')
     translate.classList.remove('translate__block')
+    gameBox.classList.add('none')
     videosContainer.style = `z-index: -11`
   }
 

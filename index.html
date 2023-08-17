@@ -65,9 +65,15 @@ st
               <div class="app-name">Translator</div>
             </li>
           </ul>
+          <ul class=row>
+            <li class="app">
+              <div class="app-icon games" onclick="games()"></div>
+              <div class="app-name">Game</div>
+            </li>
+          </ul>
         </div>
 
-        <div class="phone__box-botton">
+        <div class="phone__box-botton ">
           <ul class=row>
             <li class="app">
               <div class="app-icon message" onclick="openPhone()"></div>
@@ -130,6 +136,16 @@ st
             </div>
             <textarea class="area__notes-form" cols="30" rows="10%" placeholder="Start typing"></textarea>
           </form>
+        </div>
+
+        <div class="game__box none">
+          <div class="game">
+            <h1>Угадай число</h1>
+            <p>Введите число от 1 до 100:</p>
+            <input type="number" id="guessInput">
+            <button onclick="checkGuess()">Проверить</button>
+            <p id="message"></p>
+          </div>
         </div>
 
         <div class="block__display">
