@@ -188,9 +188,8 @@ p {
 }
 
 .games {
-  background-image: url('../img/game.png');
-  background-color: #f2f2f2;
-  border-radius: 11px;
+  background-image: url('../img/pngegg-game.png');
+  border-radius: 13px;
 }
 
 .phone__box-programs {
